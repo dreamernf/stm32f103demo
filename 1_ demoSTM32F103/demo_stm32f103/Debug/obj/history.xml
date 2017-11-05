@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -std=c99 -c -DSTM32F103C8 -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -IE:\облако\Cloud Mail.Ru\Электроника\STM32\projects\1_ demoSTM32F103\cmsis -IE:\облако\Cloud Mail.Ru\Электроника\STM32\projects\1_ demoSTM32F103\stm_lib\inc -IE:\облако\Cloud Mail.Ru\Электроника\STM32\projects\1_ demoSTM32F103 -IE:\облако\Cloud Mail.Ru\Электроника\STM32\projects -IE:\облако\Cloud Mail.Ru\Электроника\STM32\projects\1_ demoSTM32F103\cmsis_boot -IE:\облако\Cloud Mail.Ru\Электроника\STM32\projects\1_ demoSTM32F103\ub_lib -IE:\облако\Cloud Mail.Ru\Электроника\STM32 -IE:\облако\Cloud Mail.Ru\Электроника\STM32\projects\1_ demoSTM32F103\graf_lib -IE:\облако\Cloud Mail.Ru\Электроника\STM32\projects\1_ demoSTM32F103\stm_lib">
+      <target file="stm32f10x_adc.o" lastModified="15f8c4bb3cf">
+         <source file="..\..\..\stm_lib\src\stm32f10x_adc.c" lastModified="15f645f3b9b"/>
+      </target>
+      <target file="syscalls.o" lastModified="15f8c4bb6c0">
+         <source file="..\..\..\syscalls\syscalls.c" lastModified="15f6426f2b3"/>
+      </target>
+      <target file="stm32f10x_tim.o" lastModified="15f8c4ba715">
+         <source file="..\..\..\stm_lib\src\stm32f10x_tim.c" lastModified="15f62d209c7"/>
+      </target>
+      <target file="stm32f10x_exti.o" lastModified="15f8c4bb158">
+         <source file="..\..\..\stm_lib\src\stm32f10x_exti.c" lastModified="15f62f83d09"/>
+      </target>
+      <target file="stm32f10x_i2c.o" lastModified="15f8c4bbe21">
+         <source file="..\..\..\stm_lib\src\stm32f10x_i2c.c" lastModified="15f63d032b6"/>
+      </target>
+      <target file="system_stm32f10x.o" lastModified="15f8c4ba878">
+         <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="15f628095f7"/>
+      </target>
+      <target file="stm32_ub_led.o" lastModified="15f8c4baad1">
+         <source file="..\..\..\ub_lib\stm32_ub_led.c" lastModified="15f8be91b32"/>
+      </target>
+      <target file="stm32f10x_spi.o" lastModified="15f8c4bbc53">
+         <source file="..\..\..\stm_lib\src\stm32f10x_spi.c" lastModified="15f6395ee15"/>
+      </target>
+      <target file="main.o" lastModified="15f8c4bae88">
+         <source file="..\..\..\main.c" lastModified="15f8c4b9bba"/>
+      </target>
+      <target file="stm32f10x_usart.o" lastModified="15f8c4bb559">
+         <source file="..\..\..\stm_lib\src\stm32f10x_usart.c" lastModified="15f8c24ea31"/>
+      </target>
+      <target file="stm32f10x_gpio.o" lastModified="15f8c4bac9e">
+         <source file="..\..\..\stm_lib\src\stm32f10x_gpio.c" lastModified="15f628095b9"/>
+      </target>
+      <target file="st7735.o" lastModified="15f8c4bb92b">
+         <source file="..\..\..\graf_lib\st7735.c" lastModified="15f63887b4c"/>
+      </target>
+      <target file="stm32f10x_rcc.o" lastModified="15f8c4bb041">
+         <source file="..\..\..\stm_lib\src\stm32f10x_rcc.c" lastModified="15f62809665"/>
+      </target>
+      <target file="startup_stm32f10x_md.o" lastModified="15f8c4ba96e">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_md.c" lastModified="15f628095c9"/>
+      </target>
+      <target file="misc.o" lastModified="15f8c4bba93">
+         <source file="..\..\..\stm_lib\src\misc.c" lastModified="15f62d26656"/>
+      </target>
+   </processor>
+</history>

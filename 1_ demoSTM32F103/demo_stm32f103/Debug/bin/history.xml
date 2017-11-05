@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=demo_stm32f103.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\demo_stm32f103 -TC:\CooCox\CoIDE\configuration\ProgramData\demo_stm32f103/link.ld -g">
+      <target file="demo_stm32f103.elf" lastModified="15f8c4bc36a">
+         <source file="..\obj\stm32f10x_tim.o" lastModified="15f8c4ba715"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="15f8c4ba878"/>
+         <source file="..\obj\startup_stm32f10x_md.o" lastModified="15f8c4ba96e"/>
+         <source file="..\obj\stm32_ub_led.o" lastModified="15f8c4baad1"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="15f8c4bac9e"/>
+         <source file="..\obj\main.o" lastModified="15f8c4bae88"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="15f8c4bb041"/>
+         <source file="..\obj\stm32f10x_exti.o" lastModified="15f8c4bb158"/>
+         <source file="..\obj\stm32f10x_adc.o" lastModified="15f8c4bb3cf"/>
+         <source file="..\obj\stm32f10x_usart.o" lastModified="15f8c4bb559"/>
+         <source file="..\obj\syscalls.o" lastModified="15f8c4bb6c0"/>
+         <source file="..\obj\st7735.o" lastModified="15f8c4bb92b"/>
+         <source file="..\obj\misc.o" lastModified="15f8c4bba93"/>
+         <source file="..\obj\stm32f10x_spi.o" lastModified="15f8c4bbc53"/>
+         <source file="..\obj\stm32f10x_i2c.o" lastModified="15f8c4bbe21"/>
+      </target>
+   </processor>
+</history>
