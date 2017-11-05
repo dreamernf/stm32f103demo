@@ -13,15 +13,15 @@ void Delay(volatile uint32_t nCount)
 
 void init_usart() {
 
-    GPIO_InitTypeDef PORT;  //Структура содержащая настройки порта
-  USART_InitTypeDef USART;  //Структура содержащая настройки USART
+    GPIO_InitTypeDef PORT;  //РЎС‚СЂСѓРєС‚СѓСЂР° СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РЅР°СЃС‚СЂРѕР№РєРё РїРѕСЂС‚Р°
+  USART_InitTypeDef USART;  //РЎС‚СЂСѓРєС‚СѓСЂР° СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РЅР°СЃС‚СЂРѕР№РєРё USART
 
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE); //Включаем тактирование порта USART1
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE); //Включаем тактирование порта A
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE); //Р’РєР»СЋС‡Р°РµРј С‚Р°РєС‚РёСЂРѕРІР°РЅРёРµ РїРѕСЂС‚Р° USART1
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE); //Р’РєР»СЋС‡Р°РµРј С‚Р°РєС‚РёСЂРѕРІР°РЅРёРµ РїРѕСЂС‚Р° A
 
-    //Пины PA9 и PA10 в режиме альтернативных функций – Rx и Tx USART’а
+    //РџРёРЅС‹ PA9 Рё PA10 РІ СЂРµР¶РёРјРµ Р°Р»СЊС‚РµСЂРЅР°С‚РёРІРЅС‹С… С„СѓРЅРєС†РёР№ вЂ“ Rx Рё Tx USARTвЂ™Р°
     GPIO_StructInit(&PORT);
-    // задаем параметры выводов
+    // Р·Р°РґР°РµРј РїР°СЂР°РјРµС‚СЂС‹ РІС‹РІРѕРґРѕРІ
     PORT.GPIO_Pin = GPIO_Pin_9;
     PORT.GPIO_Mode = GPIO_Mode_AF_PP;
     PORT.GPIO_Speed = GPIO_Speed_2MHz;
@@ -32,19 +32,19 @@ void init_usart() {
     PORT.GPIO_Speed = GPIO_Speed_2MHz;
     GPIO_Init(GPIOA , &PORT);
 
-    //Настройка USART
+    //РќР°СЃС‚СЂРѕР№РєР° USART
     USART_StructInit(&USART);
-    USART.USART_BaudRate = 9600;   //Скорость обмена 9600 бод
-    USART.USART_WordLength = USART_WordLength_8b; //Длина слова 8 бит
-    USART.USART_StopBits = USART_StopBits_1; //1 стоп-бит
-    USART.USART_Parity = USART_Parity_No ; //Без проверки четности
-    USART.USART_HardwareFlowControl = USART_HardwareFlowControl_None; //Без аппаратного контроля
-    USART.USART_Mode = USART_Mode_Rx | USART_Mode_Tx; //Включен передатчик и приемник USART2
+    USART.USART_BaudRate = 9600;   //РЎРєРѕСЂРѕСЃС‚СЊ РѕР±РјРµРЅР° 9600 Р±РѕРґ
+    USART.USART_WordLength = USART_WordLength_8b; //Р”Р»РёРЅР° СЃР»РѕРІР° 8 Р±РёС‚
+    USART.USART_StopBits = USART_StopBits_1; //1 СЃС‚РѕРї-Р±РёС‚
+    USART.USART_Parity = USART_Parity_No ; //Р‘РµР· РїСЂРѕРІРµСЂРєРё С‡РµС‚РЅРѕСЃС‚Рё
+    USART.USART_HardwareFlowControl = USART_HardwareFlowControl_None; //Р‘РµР· Р°РїРїР°СЂР°С‚РЅРѕРіРѕ РєРѕРЅС‚СЂРѕР»СЏ
+    USART.USART_Mode = USART_Mode_Rx | USART_Mode_Tx; //Р’РєР»СЋС‡РµРЅ РїРµСЂРµРґР°С‚С‡РёРє Рё РїСЂРёРµРјРЅРёРє USART2
     USART_Init(USART1, &USART);
 
-    USART_Cmd(USART1, ENABLE);  //Включаем UART
+    USART_Cmd(USART1, ENABLE);  //Р’РєР»СЋС‡Р°РµРј UART
 
-    //Включаем прерывания по приему байта и по окончанию передачи
+    //Р’РєР»СЋС‡Р°РµРј РїСЂРµСЂС‹РІР°РЅРёСЏ РїРѕ РїСЂРёРµРјСѓ Р±Р°Р№С‚Р° Рё РїРѕ РѕРєРѕРЅС‡Р°РЅРёСЋ РїРµСЂРµРґР°С‡Рё
     USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
     //USART_ITConfig(USART1, USART_IT_TC, ENABLE);
 
@@ -74,7 +74,7 @@ int main(void)
 
 
   SysTick_Config(SystemCoreClock / 1000);
-  SystemInit(); // Инициализация настроек кварца
+  SystemInit(); // Р�РЅРёС†РёР°Р»РёР·Р°С†РёСЏ РЅР°СЃС‚СЂРѕРµРє РєРІР°СЂС†Р°
 
   __enable_irq();
   init_usart();
@@ -84,7 +84,7 @@ int main(void)
 
 
 
-  UB_Led_Init(); // Инициализация светодиодов
+  UB_Led_Init(); // Р�РЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃРІРµС‚РѕРґРёРѕРґРѕРІ
 
   ST7735_Init();
   ST7735_AddrSet(0,0,159,127);
@@ -93,14 +93,14 @@ int main(void)
   ST7735_PutStr5x7(1, 0, 0, "   TEST BOARD STM32F103  ", COLOR565_DARK_ORANGE   , COLOR565_BLACK);
   ST7735_HLine(0,159,8,COLOR565_DARK_ORANGE);
 
-  UB_Led_On(LED_DEBUG); // Включение зеленого светодиода
+  UB_Led_On(LED_DEBUG); // Р’РєР»СЋС‡РµРЅРёРµ Р·РµР»РµРЅРѕРіРѕ СЃРІРµС‚РѕРґРёРѕРґР°
 
 
 
   while(1)
   {
     Delay_US(500);
-    UB_Led_Toggle(LED_DEBUG); // Мигание красным светодиодом
+    UB_Led_Toggle(LED_DEBUG); // РњРёРіР°РЅРёРµ РєСЂР°СЃРЅС‹Рј СЃРІРµС‚РѕРґРёРѕРґРѕРј
 
   }
 }
@@ -120,11 +120,11 @@ void SysTick_Handler()
 /*******************************************************************/
 void USART1_IRQHandler()
 {
-    //Проверяем, действительно ли прерывание вызвано приемом нового байта
+    //РџСЂРѕРІРµСЂСЏРµРј, РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ Р»Рё РїСЂРµСЂС‹РІР°РЅРёРµ РІС‹Р·РІР°РЅРѕ РїСЂРёРµРјРѕРј РЅРѕРІРѕРіРѕ Р±Р°Р№С‚Р°
     if (USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
     {
 	usartData = USART_ReceiveData(USART1);
-	send_str("RECIEVE DATA");
+	//send_str("RECIEVE DATA");
 	sprintf(buf, "%c",  usartData);
 	ST7735_PutStr5x7(2, 0, 16, buf , COLOR565_YELLOW_GREEN, COLOR565_BLACK);
 	usartData = 0;
